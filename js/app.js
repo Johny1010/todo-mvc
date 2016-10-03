@@ -1,30 +1,21 @@
-/**
- * The main TodoMVC app module
- */
-var module = angular.module('todomvc', ['ngRoute', 'ngResource'])
-    .config(function ($routeProvider) {
-        'use strict';
+//definiuje moduł, tutaj w nawiasach kwadratowych beda
+define([
+    'angular',
+    'lodash',
+    'angular-storage'
+    //ng to 'angular' przekazany do funkcji
+], function (ng, _) {
+    'use strict';
 
-        var routeConfig = {
-            controller: 'TodoCtrl',
-            templateUrl: 'index.html',
-            resolve: {
-                store: function (todoStorage) {
-                    // Get the correct module (API or localStorage).
-                    return todoStorage.then(function (module) {
-                        module.get(); // Fetch the todo records in the background.
-                        return module;
-                    });
-                }
-            }
-        };
+    var myApp = ng.module('app', []);
 
-        $routeProvider
-            .when('/', routeConfig)
-            .when('/:status', routeConfig)
-            .otherwise({
-                redirectTo: '/'
-            });
-    });
+    /*    myApp.config(function(localStorageServiceProvider){
 
-angular.bootstrap(document, module);
+     localStorageServiceProvider
+     .setPrefix('todos');
+     });*/
+
+
+    //ng.module to to samo co angular.module; Tutaj w [] beda angularowe zależności
+    return myApp;
+});
