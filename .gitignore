@@ -24,7 +24,6 @@ npm-debug.log
 .jshintignore
 .jshintrc
 Gruntfile.js
-package.json
 
 ### SublimeText ###
 # cache files for sublime text
