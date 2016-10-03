@@ -1,0 +1,17 @@
+{
+  "name": "todo-mvc",
+  "homepage": "https://github.com/Johny1010/todo-mvc",
+  "authors": [
+    "Tomasz Hencel <thencel@ntrc.eu>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
