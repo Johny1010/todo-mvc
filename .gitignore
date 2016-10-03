@@ -23,7 +23,6 @@ npm-debug.log
 .editorconfig
 .jshintignore
 .jshintrc
-Gruntfile.js
 
 ### SublimeText ###
 # cache files for sublime text

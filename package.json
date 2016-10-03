@@ -7,5 +7,12 @@
   },
   "dependencies": {
     "grunt": "~0.4.5"
+  },
+  "devDependencies": {
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-serve": "^0.1.6",
+    "load-grunt-tasks": "^3.5.2",
+    "serve-static": "^1.11.1"
   }
 }
