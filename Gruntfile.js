@@ -23,13 +23,8 @@ module.exports = function(grunt){
                 tasks: ['wiredep']
             },
             scripts: {
-                files: ['<%= config.app %>/js/src/*.js'],
+                files: ['<%= config.app %>/js/*.js'],
                 tasks: ['uglify']
-            },
-            // sass
-            sass: {
-                files: ['<%= config.app %>/sass/**/*.scss'],
-                tasks: ['compass:dev']
             },
             // watch html
             html: {

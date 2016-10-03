@@ -1,7 +1,7 @@
 /**
  * The main TodoMVC app module
  */
-angular.module('todomvc', ['ngRoute', 'ngResource'])
+var module = angular.module('todomvc', ['ngRoute', 'ngResource'])
     .config(function ($routeProvider) {
         'use strict';
 
@@ -26,3 +26,5 @@ angular.module('todomvc', ['ngRoute', 'ngResource'])
                 redirectTo: '/'
             });
     });
+
+angular.bootstrap(document, module);
