@@ -1,2 +1,5 @@
 # todo-mvc
-todo for practice
+npm install
+bower install
+gulp bower
+gulp connect
