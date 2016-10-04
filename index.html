@@ -13,23 +13,27 @@
     <!--podlinkowac main css-->
 </head>
 <body ng-app="app">
-
-  <div class="container" ng-controller="TestCtrl">
-
-
-      <h1 class="center-align">Todos</h1>
-
-
-      <div class="row center-content">
-
-      </div>
+  <div>
+    <h2 class="center-align">Todos</h2>
   </div>
 
-    <!--<script src="./js/lib/jquery/dist/jquery.min.js"></script>-->
-    <!--<script src="./js/lib/Materialize/dist/js/materialize.min.js"></script>-->
+
+  <div class="container" ng-controller="TodoCtrl">
+<form action="#">
+
+      <ul class="collection with-header">
+          <li class="collection-header"><input placeholder="What needs to be done?" type="text"></li>
+          <li class="collection-item" ng-repeat="todo in todoList" >
+            <input type="checkbox" ng-model="todo.done" id="test5" />
+            <label for="test5">{{todo.name}}</label>
+          <div class="right"> <a href="#!" class="secondary-content"><i class="material-icons">add</i></a></div>
+          </li>
+        </ul>
+  </form>
+  </div>
 
     <script src="./js/lib/requirejs/require.js" data-main="./js/bootstrap.js"></script>
     <!--dodac swoje skrypty-->
-    <!--<script src="./js/app.js"></script>-->
+    <script src="js/app.js"></script>
 </body>
 </html>
