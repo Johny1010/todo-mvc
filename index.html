@@ -13,29 +13,23 @@
     <!--podlinkowac main css-->
 </head>
 <body>
-  <div class="container">
-    <h1 class="center-align">Todos</h1>
-    <div class="row center-content">
-        <div class="col s12 m6">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-               <form class="col s12">
-              <div class="row">
-          <div class="input-field col s12">
-            <input placeholder="What needs to be done" type="text" class="validate">
-            <label for="first_name"></label>
-          </div>
-        </form>
-                <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div>
+    <h2 class="center-align">Todos</h2>
+  </div>
+
+
+  <div class="container" ng-controller="TodoCtrl">
+<form action="#">
+
+      <ul class="collection with-header">
+          <li class="collection-header"><input placeholder="What needs to be done?" type="text"></li>
+          <li class="collection-item" ng-repeat="todo in todoList" >
+            <input type="checkbox" ng-model="todo.done" id="test5" />
+            <label for="test5">{{todo.name}}</label>
+          <div class="right"> <a href="#!" class="secondary-content"><i class="material-icons">add</i></a></div>
+          </li>
+        </ul>
+  </form>
   </div>
     <script src="./js/lib/jquery/dist/jquery.min.js"></script>
     <script src="./js/lib/Materialize/dist/js/materialize.min.js"></script>
