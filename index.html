@@ -13,21 +13,8 @@
 </head>
 <body>
 
-    <div>
-        <h2 class="center-align">Todos</h2>
-    </div>
-
-    <div class="container" ng-controller="TodoCtrl">
-        <form action="#">
-            <ul class="collection with-header">
-                <li class="collection-header"><input placeholder="What needs to be done?" type="text"></li>
-                <li class="collection-item" ng-repeat="todo in todoList">
-                    <input type="checkbox" ng-model="todo.done" id="test5"/>
-                    <label for="test5">{{todo.name}}</label>
-                    <div class="right"><a href="#!" class="secondary-content"><i class="material-icons">add</i></a></div>
-                </li>
-            </ul>
-        </form>
+    <div class="container">
+        <h2>Todo</h2>
     </div>
 
 <script src="js/lib/requirejs/require.js"></script>
