@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var print = require('gulp-print');
 var connect = require('gulp-connect');
 var bower = require('gulp-bower');
 
