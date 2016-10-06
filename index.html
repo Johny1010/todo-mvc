@@ -18,13 +18,17 @@
     </div>
 
     <div class="container" ng-controller="TodoCtrl">
-        <form action="#">
+        <form action="#" ng-submit="addToList(todo)">
             <ul class="collection with-header">
-                <li class="collection-header"><input placeholder="What needs to be done?" type="text"></li>
+                <li class="collection-header">
+                  <input placeholder="What needs to be done?" ng-model="todo" type="text">
+                </li>
                 <li class="collection-item" ng-repeat="todo in todoList">
-                    <input type="checkbox" ng-model="todo.done" id="test5"/>
-                    <label for="test5">{{todo.name}}</label>
-                    <div class="right"><a href="#!" class="secondary-content"><i class="material-icons">add</i></a></div>
+                    <input type="checkbox" ng-model="todo.done" id="todo.id"/>
+                    <label for="todo.id">{{todo.name}}</label>
+                    <div class="right"><a href="#!" class="secondary-content">
+                      <i class="material-icons" ng-click="deleteTodo(todo.id)">delete</i></a>
+                    </div>
                 </li>
             </ul>
         </form>
