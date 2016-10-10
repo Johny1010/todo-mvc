@@ -23,7 +23,8 @@
                 <li class="collection-header">
                   <input placeholder="What needs to be done?" ng-model="todo" type="text">
                 </li>
-                <li class="collection-item" ng-repeat="todo in todoList">
+                <li class="collection-item" ng-repeat="todo in todoList track by $index">
+
                     <input type="checkbox" ng-model="todo.done" id="todo.id"/>
                     <label for="todo.id">{{todo.name}}</label>
                     <div class="right"><a href="#!" class="secondary-content">

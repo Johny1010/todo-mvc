@@ -9,56 +9,38 @@ define([
 
     myApp.controller('TodoCtrl', ['$scope', function ($scope) {
       $scope.todo = '';
-        $scope.todoList = [
-            {
-                'id': 1,
-                'name': 'todo1',
-                'description': 'todo1',
-                'done': false
-            },
-            {
-                'id': 2,
-                'name': 'todo2',
-                'description': 'todo2',
-                'done': true
-            },
-            {
-                'id': 3,
-                'name': 'todo3',
-                'description': 'todo3',
-                'done': false
-            },
-            {
-                'id': 4,
-                'name': 'todo4',
-                'description': 'todo4',
-                'done': true
-            },
-            {
-                'id': 5,
-                'name': 'todo5',
-                'description': 'todo5',
-                'done': false
-            }
-        ];
-        $scope.addToList = function(todo) {
+
+        init();
+        function init() {
+          if (localStorage.getItem('todoList')) {
+            $scope.todoList = JSON.parse(localStorage.getItem('todoList'));
+          } else {
+            $scope.todoList = [];
+          }
+        }
+
+        $scope.addToList = function(todo, priority) {
           if (!todo) {
             return;
           }
           $scope.todoList.push({
-              'id': Math.floor((Math.random()*6)+1),
+              'id': Math.floor((Math.random()*10000)+1),
               'name': todo,
-              'description': '',
+              'priority': priority,
               'done': false
           });
           $scope.todo = '';
+          localStorage.setItem('todoList', JSON.stringify($scope.todoList));
+
         };
+
         $scope.deleteTodo = function(todoId) {
           var index = _.findIndex($scope.todoList, {'id': todoId});
           if (index > -1) {
           $scope.todoList.splice(index, 1);
         }
-        }
+        localStorage.setItem('todoList', JSON.stringify($scope.todoList));
+      };
     }]);
 
     return myApp;
