@@ -11,6 +11,12 @@ define([
 
         // Variables
         $scope.todo = '';
+        $scope.priority = undefined;
+        $scope.priorities = [
+          {'id': 1, 'name': '1'},
+          {'id': 2, 'name': '2'},
+          {'id': 3, 'name': '3'}
+        ]
 
         // Functions
         init();
@@ -24,13 +30,13 @@ define([
             }
         }
 
-        $scope.addToList = function (todo, priority) {
-            if (!todo) {
+        $scope.addToList = function (todoName, priority) {
+            if (!todoName) {
                 return;
             }
             $scope.todoList.push({
                 'id': Math.floor((Math.random() * 10000) + 1),
-                'name': todo,
+                'name': todoName,
                 'priority': priority,
                 'done': false
             });
