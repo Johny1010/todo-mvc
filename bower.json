@@ -4,15 +4,14 @@
   "authors": [
     "Tomasz Hencel <thencel@ntrc.eu>"
   ],
-  "description": "",
-  "main": "",
+  "description": "todo for practice",
   "license": "MIT",
   "dependencies": {
-    "Materialize": "materialize#~0.97.1",
+    "jquery": "^3.1.1",
     "requirejs": "~2.1.20",
-    "angular": "angularjs#~1.4.7",
+    "angular": "^1.5.8",
     "requirejs-domready": "~2.0.1",
-    "lodash": "~3.10.1",
-    "angular-local-storage": "~0.2.3"
+    "lodash": "^3.10.1",
+    "angular-material": "^1.1.1"
   }
 }

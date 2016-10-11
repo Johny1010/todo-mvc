@@ -1,25 +1,26 @@
 requirejs.config({
     paths: {
-        'jquery': 'js/lib/jquery/dist/jquery.min',
+        'jquery': 'js/lib/jquery/dist/jquery',
         'angular': 'js/lib/angular/angular',
+        'angular-aria': 'js/lib/angular-aria/angular-aria',
+        'angular-animate': 'js/lib/angular-animate/angular-animate',
+        'angular-material': 'js/lib/angular-material/angular-material',
         'domReady': 'js/lib/requirejs-domready/domReady',
-        'materialize': 'js/lib/Materialize/dist/js/materialize',
-        'velocity': 'js/lib/materialize/js/velocity.min',
-        'hammerjs': 'js/lib/materialize/js/hammer.min',
-        'lodash': 'js/lib/lodash/lodash',
-        'angular-storage': 'js/lib/angular-local-storage/dist/angular-local-storage'
+        'lodash': 'js/lib/lodash/lodash'
     },
     shim: {
         'angular': {
             deps: ['jquery'], exports: 'angular'
         },
-        'materialize': {
-            deps: ['jquery', 'hammerjs', 'velocity']
-        },
-        'angular-storage': {
+        'angular-aria': {
             deps: ['angular']
+        },
+        'angular-animate': {
+            deps: ['angular']
+        },
+        'angular-material': {
+            deps: ['angular-aria', 'angular-animate']
         }
-
     },
     priority: [
         'jquery',

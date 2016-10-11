@@ -1,14 +1,14 @@
 {
   "name": "todo-mvc",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "todo for practice",
   "scripts": {
     "postinstall": "bower install && gulp bower",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-  "gulp": "^3.9.0",
-  "gulp-print": "^2.0.1"
+    "gulp": "^3.9.0",
+    "gulp-print": "^2.0.1"
   },
   "devDependencies": {
     "gulp-bower": "0.0.10",
