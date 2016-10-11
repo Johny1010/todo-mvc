@@ -1,11 +1,11 @@
 define([
     'angular',
     'lodash',
-    'angular-storage'
-], function (ng) {
+    'angular-material'
+], function (ng, _) {
     'use strict';
 
-    var myApp = ng.module('app', []);
-    
+    var myApp = ng.module('app', ['ngMaterial']);
+
     return myApp;
 });
