@@ -8,12 +8,21 @@
     <link type="text/css" rel="stylesheet" href="styles/main.css"
           media="screen,projection"/>
 </head>
-<body>
-
-
-
-<script src="js/lib/requirejs/require.js"></script>
-<script src="js/container.js"></script>
+  <body ng-controller="calculatorController">
+    <div class="container">
+        <h1>Hi, my new calculator
+        <h1>{{ result }}</h1>
+        <input type="number" ng-model="a" placeholder="enter the number"><br>
+        <input type="number" ng-model="b" placeholder="enter the number"><br>
+        <button ng-click="add()">+</button>
+        <button ng-click="sub()">-</button>
+        <button ng-click="mul()">*</button>
+        <button ng-click="div()">/</button>
+        <button ng-click="sqr()">√</button>
+        <button ng-click="powe()">^</button>
+      </div>
+      <script src="js/lib/requirejs/require.js"></script>
+      <script src="js/container.js"></script>
 
 </body>
 </html>
