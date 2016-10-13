@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>AngularJS TodoMVC</title>
-    <link type="text/css" rel="stylesheet" href="js/lib/angular-material/angular-material.css"
-          media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="styles/main.css"
-          media="screen,projection"/>
+  <meta charset="UTF-8">
+  <title>Kalkulator</title>
+  <link type="text/css" rel="stylesheet" href="js/lib/angular-material/angular-material.css"
+  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="styles/main.css"
+  media="screen,projection"/>
 </head>
-  <body ng-controller="calculatorController">
-    <div class="container">
-        <h1>Hi, my new calculator
-        <h1>{{ result }}</h1>
-        <input type="number" ng-model="a" placeholder="enter the number"><br>
-        <input type="number" ng-model="b" placeholder="enter the number"><br>
-        <button ng-click="add()">+</button>
-        <button ng-click="sub()">-</button>
-        <button ng-click="mul()">*</button>
-        <button ng-click="div()">/</button>
-        <button ng-click="sqr()">√</button>
-        <button ng-click="powe()">^</button>
+<body ng-controller="calculatorController">
+  <div class="container">
+    <md-toolbar class="md-warn">
+      <div class="md-toolbar-tools">
+        <h2 class="md-flex">My calculator</h2>
       </div>
-      <script src="js/lib/requirejs/require.js"></script>
-      <script src="js/container.js"></script>
+    </md-toolbar>
+    <h1>{{ result }}</h1>
+    <div>
+      <div>
+        <md-input-container>
+          <label>enter the number</label>
+          <input type="number" ng-model="a">
+        </md-input-container>
+        <md-input-container>
+          <label>enter the number</label>
+          <input type="number" ng-model="b">
+        </md-input-container>
+      </div>
+    </div>
+    <div class="but">
+      <md-button class="md-raised md-primary" ng-click="add()">+</md-button>
+      <md-button class="md-raised md-primary" ng-click="mul()">*</md-button>
+      <md-button class="md-raised md-primary" ng-click="sub()">-</md-button>
+      <md-button class="md-raised md-primary" ng-click="div()">/</md-button>
+      <md-button class="md-raised md-primary" ng-click="sqr()">√</md-button>
+      <md-button class="md-raised md-primary" ng-click="powe()">^</md-button>
+    </div>
+  </div>
+
+  <script src="js/lib/requirejs/require.js"></script>
+  <script src="js/container.js"></script>
 
 </body>
 </html>
