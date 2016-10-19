@@ -7,14 +7,18 @@ define([
 
     var myApp = ng.module('app', ['ngMaterial']);
     myApp.controller('PriceCtrl', function($scope){
-      $scope.price = false;
+
+      $scope.taxType = 'netto';
       $scope.price = 0;
-      $scope.vat = $scope.price * 0.23;
-      $scope.add = function(){
-      $scope.result = $scope.price + $scope.vat;
-      $scope.brutto = $scope.result + ($scope.price*0.23);
+      $scope.calculate = function(taxType){
+        if(taxType === 'netto') {
+          $scope.result = $scope.price - ($scope.price * 0.23);
+        } else if(taxType === 'brutto') {
+          $scope.result = $scope.price * 1.23;
+        }
       }
-});
+
+  });
 
 
 
