@@ -12,45 +12,62 @@
 
 
 
- <md-content>
-     <md-tabs md-dynamic-height md-border-bottom>
-       <md-tab label="one">
-         <md-content class="md-padding">
-           <h1 class="md-display-2">Brutto/Netto</h1>
-           <div ng-controller="PriceCtrl">
-             <md-input-container>
-          <label>koszt</label>
-          <input ng-model="price" type="number">
-        </md-input-container>
-              <md-select md-cols-md="4" ng-model="taxType" ng-change="calculate(taxType)" placeholder="Tax" class="md-no-underline">
+  <md-content >
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="one">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Brutto/Netto</h1>
+
+          <div ng-controller="PriceCtrl">
+            <md-input-container>
+              <label>koszt</label>
+              <input ng-model="price" type="number">
+            </md-input-container>
+            <md-select ng-model="taxType" ng-change="calculate(taxType)" placeholder="Tax">
               <md-option value="netto">Netto</md-option>
               <md-option value="brutto">Brutto</md-option>
             </md-select>
-            </select>
             <p ng-if="taxType === 'netto'">Przeliczenie z wartości brutto na netto</p>
             <p ng-if="taxType === 'brutto'">Przeliczenie z wartości netto na brutto</p>
             <md-button class="md-raised md-primary" ng-model="name" ng-click="calculate(taxType)">change</md-button>
             <p ng-if="taxType === 'netto'">wartość netto z {{price}} na wartość brutto {{result}}</p>
             <p ng-if="taxType === 'brutto'">wartość brutto z {{price}} na wartość netto {{result}}</p>
           </div>
-         </md-content>
-       </md-tab>
-       <md-tab label="two">
-         <md-content class="md-padding">
-           <h1 class="md-display-2">Podatki</h1>
+        </md-content>
+      </md-tab>
 
-       </md-tab>
-       <md-tab label="three">
-         <md-content class="md-padding">
-           <h1 class="md-display-2">Akcyza</h1>
+      <md-tab label="two">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Podatki</h1>
 
-         </md-content>
-       </md-tab>
-     </md-tabs>
-   </md-content>
+          <div ng-controller="Podatki">
+            <p>Koszt po podaniu vat:  {{resultat | currency:"PLN ":2}}</p>
+            <p>Kwota podatku vat: {{wynik  | currency:"PLN ":2}}</p>
+            <md-input-container>
+              <label>koszt</label>
+              <input ng-model="cost" type="number">
+            </md-input-container>
+            <md-select ng-model="taxi" placeholder="Tax">
+              <md-option value="5">5%</md-option>
+              <md-option value="8">8%</md-option>
+              <md-option value="21">21%</md-option>
+              <md-option value="23">23%</md-option>
+            </md-select>
+            <md-button class="md-raised md-primary" ng-model="name" ng-click="calc(taxi)">Licz</md-button>
+          </div>
 
-  <script src="js/lib/requirejs/require.js"></script>
-  <script src="js/container.js"></script>
+        </md-tab>
+        <md-tab label="three">
+          <md-content class="md-padding">
+            <h1 class="md-display-2">Akcyza</h1>
 
-</body>
-</html>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-content>
+
+    <script src="js/lib/requirejs/require.js"></script>
+    <script src="js/container.js"></script>
+
+  </body>
+  </html>
