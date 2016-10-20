@@ -20,27 +20,38 @@ define([
 
   });
 
-  myApp.controller('Podatki', function($scope){
+  myApp.controller('taxesController', function($scope){
     $scope.cost = 0;
     $scope.calc = function(taxi){
       if(taxi === '5') {
-        $scope.resultat = $scope.cost * 1.05;
-        $scope.wynik = $scope.resultat-$scope.cost;
+        $scope.result = $scope.cost * 1.05;
+        $scope.result2 = $scope.result-$scope.cost;
       } else if (taxi === '8'){
-        $scope.resultat = $scope.cost * 1.08;
-        $scope.wynik = $scope.resultat-$scope.cost;
+        $scope.result = $scope.cost * 1.08;
+        $scope.result2 = $scope.result-$scope.cost;
       } else if (taxi === '21'){
-        $scope.resultat = $scope.cost * 1.21;
-        $scope.wynik = $scope.resultat-$scope.cost;
+        $scope.result = $scope.cost * 1.21;
+        $scope.result2 = $scope.result-$scope.cost;
       } else if (taxi === '23'){
-        $scope.resultat = $scope.cost * 1.23;
-        $scope.wynik = $scope.resultat-$scope.cost;
+        $scope.result = $scope.cost * 1.23;
+        $scope.result2 = $scope.result-$scope.cost;
       }
     }
   });
 
-
-
+  myApp.controller('excise', function($scope){
+    $scope.engine = 0;
+    $scope.cost = 0;
+    $scope.exc = function(tax){
+      if( $scope.engine>2000 ) {
+        $scope.result = $scope.cost * 1.186;
+        $scope.result2 =$scope.result-$scope.cost;
+      } else if($scope.engine<2000){
+        $scope.result = $scope.cost * 1.031;
+        $scope.result2 =$scope.result-$scope.cost;
+      }
+    }
+  });
 
 
   return myApp;
