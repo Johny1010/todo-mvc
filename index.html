@@ -10,15 +10,13 @@
 </head>
 <body>
 
-
-
-  <md-content >
+  <md-content class="md" layout="column" layout-align="center">
     <md-tabs md-dynamic-height md-border-bottom>
-      <md-tab label="one">
+      <md-tab  label="one">
         <md-content class="md-padding">
-          <h1 class="md-display-2">Brutto/Netto</h1>
 
-          <div ng-controller="PriceCtrl">
+          <div layout="column" layout-align="center" ng-controller="PriceCtrl">
+            <h1 class="md-display-2">Brutto/Netto</h1>
             <md-input-container>
               <label>koszt</label>
               <input ng-model="price" type="number">
@@ -29,7 +27,7 @@
             </md-select>
             <p ng-if="taxType === 'netto'">Przeliczenie z wartości brutto na netto</p>
             <p ng-if="taxType === 'brutto'">Przeliczenie z wartości netto na brutto</p>
-            <md-button class="md-raised md-primary" ng-model="name" ng-click="calculate(taxType)">change</md-button>
+            <md-button class="md-raised md-primary" ng-click="calculate(taxType)">change</md-button>
             <p ng-if="taxType === 'netto'">wartość netto z {{price}} na wartość brutto {{result}}</p>
             <p ng-if="taxType === 'brutto'">wartość brutto z {{price}} na wartość netto {{result}}</p>
           </div>
@@ -38,9 +36,9 @@
 
       <md-tab label="two">
         <md-content class="md-padding">
-          <h1 class="md-display-2">Podatki</h1>
 
-          <div ng-controller="taxesController">
+          <div layout="column" layout-align="center" ng-controller="taxesController">
+            <h1 class="md-display-2">Podatki</h1>
             <p>Koszt po podaniu vat:  {{result | currency:"PLN ":2}}</p>
             <p>Kwota podatku vat: {{result2  | currency:"PLN ":2}}</p>
             <md-input-container>
@@ -53,40 +51,66 @@
               <md-option value="21">21%</md-option>
               <md-option value="23">23%</md-option>
             </md-select>
-            <md-button class="md-raised md-primary" ng-model="name" ng-click="calc(taxi)">Licz</md-button>
+            <md-button class="md-raised md-primary" ng-click="calc(taxi)">Licz</md-button>
           </div>
+        </md-content>
+      </md-tab>
 
-        </md-tab>
-        <md-tab label="three">
-          <md-content class="md-padding">
+      <md-tab label="three">
+        <md-content class="md-padding">
+          <div layout="column" layout-align="center" ng-controller="excise">
             <h1 class="md-display-2">Akcyza</h1>
-
-            <div ng-controller="excise">
-
-              <md-input-container>
-                <label>koszt zakupu w zł</label>
-                <input ng-model="cost" type="number">
-              </md-input-container>
-            </br>
             <md-input-container>
-              <label>Pojemność silnika w cm3</label>
-              <input ng-model="engine" type="number">
+              <label>koszt zakupu w zł</label>
+              <input ng-model="cost" type="number">
             </md-input-container>
           </br>
+          <md-input-container>
+            <label>Pojemność silnika w cm3</label>
+            <input ng-model="engine" type="number">
+          </md-input-container>
           <small>* do pojemności 2000cm3 podatek wynosi 3.1%</small></br>
           <small>* powyżej pojemności 2000cm3 podatek wynosi 18.6%</small>
         </br>
       </br>
-      <md-button class="md-raised md-primary" ng-model="name" ng-click="exc(tax)">Licz</md-button>
+      <md-button class="md-raised md-primary" ng-click="exc(tax)">Licz</md-button>
       <p>Wartość po dodaniu akcyzy {{result | currency:"PLN ":2}} </p>
       <p>Wartość akcyzy {{result2 | currency:"PLN ":2}}</p>
     </div>
-
-
-
-
   </md-content>
 </md-tab>
+
+<md-tab label="four">
+  <md-content class="md-padding">
+
+    <div layout="column" layout-align="center" ng-controller="investment">
+      <h1 class="md-display-2">Lokata</h1>
+      <md-input-container>
+        <label>Kwota depozytu w zł</label>
+        <input ng-model="cost" type="number">
+      </md-input-container>
+      <md-input-container class="procent">
+        <label>oprocentowanie</label>
+        <input ng-model="procent" type="number" min="0" max="100" value="10" step="0.1">
+      </md-input-container>
+    </br>
+    <small>Okres deponowania</small>
+  </br>
+  <md-radio-group ng-model="months" layout="row">
+    <md-radio-button value="one" class="md-primary">1msc</md-radio-button>
+    <md-radio-button value="three">3msc</md-radio-button>
+    <md-radio-button value="six">6msc</md-radio-button>
+    <md-radio-button value="twelve">12msc</md-radio-button>
+  </md-radio-group>
+</br>
+<md-button class="md-raised md-primary" ng-click="invest(tax)">Licz</md-button>
+<p>Kwota z odsetkami {{result | currency:"PLN ":2}}</p>
+<p>Odsetki {{result2 | currency:"PLN ":2}}</p>
+</div>
+</md-content>
+</md-tab>
+
+
 </md-tabs>
 </md-content>
 

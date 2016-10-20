@@ -53,6 +53,27 @@ define([
     }
   });
 
+  myApp.controller('investment', function($scope){
+    $scope.cost = 0;
+    $scope.procent = 0;
+    $scope.months = 'one';
+    $scope.invest = function(tax){
+      if ( $scope.months === 'one'){
+        $scope.result = ($scope.cost + (($scope.cost/100 * $scope.procent)*0.08333));
+        $scope.result2 = ($scope.cost/100 * $scope.procent)*0.08333;
+      } else if ( $scope.months === 'three'){
+        $scope.result =($scope.cost + (($scope.cost/100 * $scope.procent)*0.25));
+        $scope.result2 = ($scope.cost/100 * $scope.procent)*0.25;
+      } else if ( $scope.months === 'six'){
+        $scope.result =($scope.cost + (($scope.cost/100 * $scope.procent)*0.5));
+        $scope.result2 = ($scope.cost/100 * $scope.procent)*0.5;
+      } else if ( $scope.months === 'twelve'){
+        $scope.result =$scope.cost + ($scope.cost/100 * $scope.procent);
+        $scope.result2 = ($scope.cost/100 * $scope.procent);
+      }
+
+    }
+  });
 
   return myApp;
 });
