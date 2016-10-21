@@ -7,6 +7,8 @@
   media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="styles/main.css"
   media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
 
@@ -16,7 +18,9 @@
         <md-content class="md-padding">
 
           <div layout="column" layout-align="center" ng-controller="PriceCtrl">
-            <h1 class="md-display-2">Brutto/Netto</h1>
+            <h1 class="md-display-2"><md-icon md-font-set="material-icons"> compare_arrows </md-icon>Brutto/Netto</h1>
+
+
             <md-input-container>
               <label>koszt</label>
               <input ng-model="price" type="number">
@@ -38,7 +42,7 @@
         <md-content class="md-padding">
 
           <div layout="column" layout-align="center" ng-controller="taxesController">
-            <h1 class="md-display-2">Podatki</h1>
+            <h1 class="md-display-2"><md-icon md-font-set="material-icons"> local_atm </md-icon>Podatki</h1>
             <p>Koszt po podaniu vat:  {{result | currency:"PLN ":2}}</p>
             <p>Kwota podatku vat: {{result2  | currency:"PLN ":2}}</p>
             <md-input-container>
@@ -59,7 +63,7 @@
       <md-tab label="three">
         <md-content class="md-padding">
           <div layout="column" layout-align="center" ng-controller="excise">
-            <h1 class="md-display-2">Akcyza</h1>
+            <h1 class="md-display-2"><md-icon md-font-set="material-icons"> time_to_leave </md-icon>Akcyza</h1>
             <md-input-container>
               <label>koszt zakupu w zł</label>
               <input ng-model="cost" type="number">
@@ -84,7 +88,7 @@
   <md-content class="md-padding">
 
     <div layout="column" layout-align="center" ng-controller="investment">
-      <h1 class="md-display-2">Lokata</h1>
+      <h1 class="md-display-2"><md-icon md-font-set="material-icons md-36"> monetization_on </md-icon>Lokata</h1>
       <md-input-container>
         <label>Kwota depozytu w zł</label>
         <input ng-model="cost" type="number">

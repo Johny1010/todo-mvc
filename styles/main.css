@@ -8,3 +8,6 @@ md-select {
   width: 500px;
   margin: 0 auto;
 }
+md-icon {
+  padding-right: 20px;
+}
