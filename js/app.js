@@ -24,17 +24,17 @@ define([
     $scope.cost = 0;
     $scope.calc = function(taxi){
       if(taxi === '5') {
-        $scope.result = $scope.cost * 1.05;
-        $scope.result2 = $scope.result-$scope.cost;
+        $scope.withVat = $scope.cost * 1.05;
+        $scope.vat = $scope.withVat-$scope.cost;
       } else if (taxi === '8'){
-        $scope.result = $scope.cost * 1.08;
-        $scope.result2 = $scope.result-$scope.cost;
+        $scope.withVat = $scope.cost * 1.08;
+        $scope.vat = $scope.withVat-$scope.cost;
       } else if (taxi === '21'){
-        $scope.result = $scope.cost * 1.21;
-        $scope.result2 = $scope.result-$scope.cost;
+        $scope.withVat = $scope.cost * 1.21;
+        $scope.vat = $scope.withVat-$scope.cost;
       } else if (taxi === '23'){
-        $scope.result = $scope.cost * 1.23;
-        $scope.result2 = $scope.result-$scope.cost;
+        $scope.withVat = $scope.cost * 1.23;
+        $scope.vat = $scope.withVat-$scope.cost;
       }
     }
   });
@@ -42,13 +42,13 @@ define([
   myApp.controller('excise', function($scope){
     $scope.engine = 0;
     $scope.cost = 0;
-    $scope.exc = function(tax){
-      if( $scope.engine>2000 ) {
-        $scope.result = $scope.cost * 1.186;
-        $scope.result2 =$scope.result-$scope.cost;
-      } else if($scope.engine<2000){
-        $scope.result = $scope.cost * 1.031;
-        $scope.result2 =$scope.result-$scope.cost;
+    $scope.calculateExcise = function(tax){
+      if($scope.engine > 2000) {
+        $scope.withExcise = $scope.cost * 1.186;
+        $scope.withoutExcise = $scope.withExcise-$scope.cost;
+      } else if($scope.engine < 2000){
+        $scope.withExcise = $scope.cost * 1.031;
+        $scope.withoutExcise = $scope.withExcise-$scope.cost;
       }
     }
   });
@@ -58,18 +58,18 @@ define([
     $scope.procent = 0;
     $scope.months = 'one';
     $scope.invest = function(tax){
-      if ( $scope.months === 'one'){
-        $scope.result = ($scope.cost + (($scope.cost/100 * $scope.procent)*0.08333));
-        $scope.result2 = ($scope.cost/100 * $scope.procent)*0.08333;
-      } else if ( $scope.months === 'three'){
-        $scope.result =($scope.cost + (($scope.cost/100 * $scope.procent)*0.25));
-        $scope.result2 = ($scope.cost/100 * $scope.procent)*0.25;
-      } else if ( $scope.months === 'six'){
-        $scope.result =($scope.cost + (($scope.cost/100 * $scope.procent)*0.5));
-        $scope.result2 = ($scope.cost/100 * $scope.procent)*0.5;
-      } else if ( $scope.months === 'twelve'){
-        $scope.result =$scope.cost + ($scope.cost/100 * $scope.procent);
-        $scope.result2 = ($scope.cost/100 * $scope.procent);
+      if ($scope.months === 'one'){
+        $scope.amount = ($scope.cost + (($scope.cost/100 * $scope.procent)*0.08333));
+        $scope.interest = ($scope.cost/100 * $scope.procent)*0.08333;
+      } else if ($scope.months === 'three'){
+        $scope.amount =($scope.cost + (($scope.cost/100 * $scope.procent)*0.25));
+        $scope.interest = ($scope.cost/100 * $scope.procent)*0.25;
+      } else if ($scope.months === 'six'){
+        $scope.amount =($scope.cost + (($scope.cost/100 * $scope.procent)*0.5));
+        $scope.interest = ($scope.cost/100 * $scope.procent)*0.5;
+      } else if ($scope.months === 'twelve'){
+        $scope.amount =$scope.cost + ($scope.cost/100 * $scope.procent);
+        $scope.interest = ($scope.cost/100 * $scope.procent);
       }
 
     }
