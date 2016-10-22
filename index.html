@@ -15,15 +15,15 @@
         <h2 class="md-flex">My calculator</h2>
       </div>
     </md-toolbar>
-    <h1>{{ result | currency:0 }}</h1>
+    <h1>{{ result | limitTo: 7 }}</h1>
     <div>
       <div>
         <md-input-container>
-          <label>enter the number</label>
+          <label>First value</label>
           <input type="number" ng-model="a">
         </md-input-container>
         <md-input-container>
-          <label>enter the number</label>
+          <label>Second value</label>
           <input type="number" ng-model="b">
         </md-input-container>
       </div>
@@ -36,6 +36,7 @@
       <md-button class="md-raised md-primary" ng-click="sqr()">√</md-button>
       <md-button class="md-raised md-primary" ng-click="powe()">^</md-button>
     </div>
+    <md-button class="md-raised md-warn" ng-click="clear()">C</md-button>
   </div>
 
   <script src="js/lib/requirejs/require.js"></script>

@@ -6,8 +6,9 @@ define([
     'use strict';
 
     var myApp = ng.module('app', ['ngMaterial']);
-    
+
     myApp.controller('calculatorController', function($scope){
+
       $scope.result = 0;
       $scope.add = function(){
         $scope.result = $scope.a + $scope.b;
@@ -27,7 +28,13 @@ define([
       $scope.powe = function(){
         $scope.result = Math.pow($scope.a, $scope.b);
       }
+      $scope.clear = function(){
+			$scope.result = 0;
+		};
+
     });
+
+
 
     return myApp;
 });
