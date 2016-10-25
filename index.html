@@ -9,7 +9,7 @@
   media="screen,projection"/>
 </head>
 <body>
-  <div class="container" ng-app="app" ng-controller="calculatorController">
+  <div class="container" ng-controller="CalculatorCtrl">
     <md-toolbar class="md-warn">
       <div class="md-toolbar-tools">
         <h2 class="md-flex">My calculator</h2>
@@ -19,22 +19,15 @@
     <div>
       <div>
         <md-input-container>
-          <label>First value</label>
-          <input type="number" ng-model="a">
-        </md-input-container>
-        <md-input-container>
-          <label>Second value</label>
-          <input type="number" ng-model="b">
+          <label>value</label>
+          <input type="text" ng-change="checkInput()" ng-model="value" pattern="\d{1,5}">
         </md-input-container>
       </div>
-    </div>
+      </div>
+      <input type="text"  ng-model="myText" name="inputName" ng-pattern="onlyNumbers">
+
     <div class="but">
-      <md-button class="md-raised md-primary" ng-click="add()">+</md-button>
-      <md-button class="md-raised md-primary" ng-click="mul()">*</md-button>
-      <md-button class="md-raised md-primary" ng-click="sub()">-</md-button>
-      <md-button class="md-raised md-primary" ng-click="div()">/</md-button>
-      <md-button class="md-raised md-primary" ng-click="sqr()">√</md-button>
-      <md-button class="md-raised md-primary" ng-click="powe()">^</md-button>
+      <md-button class="md-raised md-primary" ng-click="calculate()">result</md-button>
     </div>
     <md-button class="md-raised md-warn" ng-click="clear()">C</md-button>
   </div>
