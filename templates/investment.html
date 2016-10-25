@@ -1,0 +1,24 @@
+<div layout="column" layout-align="center">
+  <h1 class="md-display-2"><md-icon md-font-set="material-icons md-36"> monetization_on </md-icon>Investment</h1>
+  <md-input-container>
+    <label>Deposit amount in PLN</label>
+    <input ng-model="cost" type="number">
+  </md-input-container>
+  <md-input-container class="percentage">
+    <label>Interest in %</label>
+    <input ng-model="percentage" type="number" min="0" max="100" value="10" step="0.1">
+  </md-input-container>
+</br>
+<small>Period of deposite</small>
+</br>
+<md-radio-group ng-model="months" layout="row">
+  <md-radio-button value="one" class="md-primary">1mth</md-radio-button>
+  <md-radio-button value="three">3mth</md-radio-button>
+  <md-radio-button value="six">6mth</md-radio-button>
+  <md-radio-button value="twelve">12mth</md-radio-button>
+</md-radio-group>
+</br>
+<md-button class="md-raised md-primary" ng-click="invest()">Count</md-button>
+<p>Amount of interest {{amount | currency:"PLN ":2}}</p>
+<p>Interest {{interest | currency:"PLN ":2}}</p>
+</div>

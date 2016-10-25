@@ -1,0 +1,16 @@
+<div layout="column" layout-align="center">
+  <h1 class="md-display-2"><md-icon md-font-set="material-icons"> compare_arrows </md-icon>Gross/Net</h1>
+  <md-input-container>
+    <label>Cost in PLN</label>
+    <input ng-model="price" type="number">
+  </md-input-container>
+  <md-select ng-model="taxType" ng-change="calculate(taxType)" placeholder="Tax">
+    <md-option value="netto">Net</md-option>
+    <md-option value="brutto">Gross</md-option>
+  </md-select>
+  <p ng-if="taxType === 'netto'">Conversion from gross to net</p>
+  <p ng-if="taxType === 'brutto'">Conversion from net to gross</p>
+  <md-button class="md-raised md-primary" ng-click="calculate(taxType)">Count</md-button>
+  <p ng-if="taxType === 'netto'">Net value of {{price}} has value gross {{result}}</p>
+  <p ng-if="taxType === 'brutto'">Gross value of {{price}} has value net {{result}}</p>
+</div>

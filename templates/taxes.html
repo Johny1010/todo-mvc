@@ -1,0 +1,16 @@
+<div layout="column" layout-align="center">
+  <h1 class="md-display-2"><md-icon md-font-set="material-icons"> local_atm </md-icon>Taxes</h1>
+  <p>cost after adding vat:  {{withVat | currency:"PLN ":2}}</p>
+  <p>amount of vat: {{vat  | currency:"PLN ":2}}</p>
+  <md-input-container>
+    <label>cost in PLN</label>
+    <input ng-model="cost" type="number">
+  </md-input-container>
+  <md-select ng-model="taxi" placeholder="Tax">
+    <md-option value="5">5%</md-option>
+    <md-option value="8">8%</md-option>
+    <md-option value="21">21%</md-option>
+    <md-option value="23">23%</md-option>
+  </md-select>
+  <md-button class="md-raised md-primary" ng-click="calc()">count</md-button>
+</div>
